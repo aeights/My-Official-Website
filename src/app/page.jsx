@@ -1,10 +1,24 @@
-import React from 'react'
+"use client"
+
+import SkillComponent from '@/components/SkillComponent'
+import { useState } from 'react'
+
 
 function Home() {
+    const [currentValue, setCurrentValue] = useState(1);
+
+    const next = () => {
+    setCurrentValue(currentValue + 1);
+    };
+
+    const previous = () => {
+    setCurrentValue(currentValue - 1);
+    };
+
     return (
         <>
             <section id='hero'>
-                <div className='w-screen h-screen flex flex-row justify-center items-center'>
+                <div className='w-full h-screen flex flex-row justify-center items-center'>
                     <div className='relative flex flex-col w-[300px] h-[350px] rounded-md mx-10'>
                         <div className='w-[250px] h-[330px] absolute left-4 bottom-2 rounded-md shadow-[3px_5px_10px_rgba(0,0,0,0.5)]'>
                             <img className='object-cover w-full h-full rounded-md' src="/assets/photo.jpg" />
@@ -76,8 +90,8 @@ function Home() {
                 </div>
             </section>
 
-            <section id='skill'>
-                <div className='w-screen flex flex-col items-center'>
+            <section id='skill' className='mb-16'>
+                <div className='flex flex-col items-center'>
                     <div className='w-[80%] text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>SKILLS</h1>
                         <p className='text-primary-base text-lg'>EXPLORE MY PROFICIENCY IN VARIOUS PROGRAMMING LANGUAGES, FRAMEWORKS, AND TOOLS. CHECK OUT THE SKILLS THAT POWER MY PROJECTS AND HELP ME EXCEL IN THE DIGITAL WORLD.</p>
@@ -87,10 +101,11 @@ function Home() {
                             <p className='mb-4 text-md text-primary-base'>LANGUAGE</p>
                             <ul className='flex justify-center'>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                    {/* <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
                                         <img className='h-10' src="/assets/icons/python.png" alt="python" />
                                         <p className='text-xs text-primary-base'>PYTHON</p>
-                                    </div>
+                                    </div> */}
+                                    <SkillComponent imageUrl={"/assets/icons/python.png"} imageAlt={"python"} imageTitle={"PYTHON"}></SkillComponent>
                                 </li>
                                 <li>
                                     <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
@@ -205,6 +220,177 @@ function Home() {
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id='experience' className='mb-16'>
+                <div>
+                    <div className='text-center mb-8'>
+                        <h1 className='text-5xl font-bold text-tertiary-base mb-12'>EXPERIENCE</h1>
+                    </div>
+                    <div className='flex justify-center items-center mb-16'>
+                        <div className='w-[400px] mr-4'>
+                            <img className='w-full' src="/assets/experience/ads.png" alt="PT Adma Digital Solusi" />
+                        </div>
+                        <div className='w-[500px]'>
+                            <div className='mb-4'>
+                                <p className='text-primary-base text-xl font-semibold mb-4'>PT ADMA DIGITAL SOLUSI</p>
+                                <p className='text-tertiary-base text-lg'>SURABAYA, INDONESIA</p>
+                            </div>
+                            <div className='text-sm'>
+                                <p className='text-primary-base mb-2 text-justify'>ADS Digital Partner (PT Adma Digital Solusi) is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and Bandung. I'm here as a backend engineer with several duties including:</p>
+                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
+                                    <li>Create an influencer search platform (Find Fluence).</li>
+                                    <li>Designing databases, and creating APIs.</li>
+                                    <li>Deploying and maintaining website on server.</li>
+                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center items-center'>
+                        <div className='w-[400px] mr-4'>
+                            <img className='w-full' src="/assets/experience/telkom.png" alt="Telkom Access Jember" />
+                        </div>
+                        <div className='w-[500px]'>
+                            <div className='mb-4'>
+                                <p className='text-primary-base text-xl font-semibold mb-4'>TELKOM ACCESS JEMBER</p>
+                                <p className='text-tertiary-base text-lg'>JEMBER, INDONESIA</p>
+                            </div>
+                            <div className='text-sm'>
+                                <p className='text-primary-base mb-2 text-justify'>Telkom Access is a subsidiary of PT Telkom Indonesia Tbk and was founded on December 12 2012. I work here in the Access and Service Operation (ASO) Unit, with several tasks including:</p>
+                                <ul className='text-primary-base text-justify' style={{ listStyleType: 'disc', paddingLeft: '1.25rem' }}>
+                                    <li>Serving customers in the customer service department.</li>
+                                    <li>Responsible for handling disturbances or trouble shooting experienced by customers.</li>
+                                    <li>Coordinate with field technicians to address customer troubleshooting.</li>
+                                    <li>Network maintenance, especially for ODP in each sub-district.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id='project'>
+                <div className='pb-10'>
+                    <div className='text-center mb-8'>
+                        <h1 className='text-5xl font-bold text-tertiary-base mb-12'>PROJECT</h1>
+                    </div>
+                    <div className={`justify-center items-center ${(currentValue == 1 ? 'flex':'hidden')}`}>
+                        <div className='w-[400px] mr-4'>
+                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
+                        </div>
+                        <div className='w-[500px]'>
+                            <div className='mb-4'>
+                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND FLUENCE</p>
+                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
+                                <div className='flex items-center'>
+                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
+                                    <div className='flex '>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/laravel.png" alt="laravel" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/mysql.png" alt="mysql" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='text-sm'>
+                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
+                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
+                                    <li>Designing database.</li>
+                                    <li>Create application flows, diagrams and integration.</li>
+                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
+                                    <li>Configure payments for applications.</li>
+                                    <li>Deploying and maintaining website on server.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`justify-center items-center ${(currentValue == 2 ? 'flex':'hidden')}`}>
+                        <div className='w-[400px] mr-4'>
+                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
+                        </div>
+                        <div className='w-[500px]'>
+                            <div className='mb-4'>
+                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND</p>
+                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
+                                <div className='flex items-center'>
+                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
+                                    <div className='flex '>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/laravel.png" alt="laravel" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/mysql.png" alt="mysql" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='text-sm'>
+                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
+                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
+                                    <li>Designing database.</li>
+                                    <li>Create application flows, diagrams and integration.</li>
+                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
+                                    <li>Configure payments for applications.</li>
+                                    <li>Deploying and maintaining website on server.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`justify-center items-center ${(currentValue == 3 ? 'flex':'hidden')}`}>
+                        <div className='w-[400px] mr-4'>
+                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
+                        </div>
+                        <div className='w-[500px]'>
+                            <div className='mb-4'>
+                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND FLUENCE 3</p>
+                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
+                                <div className='flex items-center'>
+                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
+                                    <div className='flex '>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/laravel.png" alt="laravel" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
+                                        </div>
+                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
+                                            <img src="/assets/icons/mysql.png" alt="mysql" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='text-sm'>
+                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
+                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
+                                    <li>Designing database.</li>
+                                    <li>Create application flows, diagrams and integration.</li>
+                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
+                                    <li>Configure payments for applications.</li>
+                                    <li>Deploying and maintaining website on server.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center gap-8'>
+                        <div onClick={previous} className={`${(currentValue == 1) ? 'hidden' : 'flex'} justify-center items-center gap-2 mt-8 cursor-pointer hover:transform hover:scale-105 duration-300`}>
+                            <img className='w-6 h-6 transform -scale-x-100' src="/assets/icons/arrow.png" alt="previous" />
+                            <button className='text-primary-base text-2xl' type='button'>PREVIOUS</button>
+                        </div>
+                        <div onClick={next} className={`${(currentValue == 3) ? 'hidden' : 'flex'} justify-center items-center gap-2 mt-8 cursor-pointer hover:transform hover:scale-105 duration-300`}>
+                            <button className='text-primary-base text-2xl' type='button'>NEXT</button>
+                            <img className='w-6 h-6' src="/assets/icons/arrow.png" alt="next" />
                         </div>
                     </div>
                 </div>

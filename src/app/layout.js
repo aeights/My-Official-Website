@@ -2,7 +2,7 @@
 
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const poppins = Poppins({ weight: '400', style: 'normal',subsets: ['latin'] });
 
@@ -13,15 +13,22 @@ const poppins = Poppins({ weight: '400', style: 'normal',subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   const [color, setColor] = useState(false);
-  const changeColor = () => {
-    if (window.scrollY >= 50) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  }
 
-  window.addEventListener('scroll', changeColor);
+  useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 50) {
+        setColor(true);
+      } else {
+        setColor(false);
+      }
+    }
+  
+    window.addEventListener('scroll', changeColor);
+    
+    return () => {
+      window.addEventListener('scroll', changeColor);
+    };
+  })
 
   return (
     <html lang="en">
@@ -55,7 +62,7 @@ export default function RootLayout({ children }) {
           </div>
         </nav>
 
-        <main className='bg-secondary-base w-[100vw]'>
+        <main className='bg-secondary-base'>
           {children}
         </main>
       </body>
