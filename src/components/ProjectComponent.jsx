@@ -4,7 +4,7 @@ import StackComponent from './StackComponent'
 function ProjectComponent({state, src, alt, title, role, stackSrc, stackAlt, body, tasks}) {
     return (
         <div className={`justify-center items-center ${state}`}>
-            <div className='w-[400px] mr-4'>
+            <div className='w-[350px] mr-4'>
                 <img className='w-full' src={src} alt={alt} />
             </div>
             <div className='w-[500px]'>

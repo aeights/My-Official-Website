@@ -52,18 +52,25 @@ function Home() {
 
     const project = {
         src: [
-            "/assets/project/findfluence.png",
+            "/assets/project/findfluence1.png",
+            "/assets/project/makeupartist.png",
         ],
         alt: [
-            "PT Adma Digital Solusi",
+            "Find Fluence",
+            "Make Up Artist",
         ],
         title: [
             "FIND FLUENCE",
+            "MAKE UP ARTIST",
         ],
         role: [
             "BACKEND ENGINEER",
+            "FULLSTACK DEVELOPER",
         ],
         stackSrc: [
+            [
+                "/assets/icons/laravel.png", "/assets/icons/bootstrap.png", "/assets/icons/mysql.png"
+            ],
             [
                 "/assets/icons/laravel.png", "/assets/icons/bootstrap.png", "/assets/icons/mysql.png"
             ],
@@ -72,9 +79,13 @@ function Home() {
             [
                 "laravel", "bootstrap", "mysql"
             ],
+            [
+                "laravel", "bootstrap", "mysql"
+            ],
         ],
         body: [
             "Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:",
+            "“Make Up Artist” is a website for making appointments with make up artists. Customers can CRUD appointments, make payments and adding testimonial for service. And admins can manage about us, service, payment method, appointments and verify payments. This is my customer's website. Here are some of my tasks:",
         ],
         tasks: [
             [
@@ -84,6 +95,11 @@ function Home() {
                 "Configure payments for applications.",
                 "Deploying and maintaining website on server.",
             ],
+            [
+                "Designing database.",
+                "Create application flows, logic and UI integration.",
+                "Configure simple payments for customer.",
+            ]
         ],
     };
 
@@ -162,7 +178,7 @@ function Home() {
                 </div>
             </section>
 
-            <section id='skill' className='mb-16'>
+            <section id='skill' className='mb-24'>
                 <div className='flex flex-col items-center'>
                     <div className='w-[80%] text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>SKILLS</h1>
@@ -242,7 +258,7 @@ function Home() {
                 </div>
             </section>
 
-            <section id='experience' className='mb-16'>
+            <section id='experience' className='mb-24'>
                 <div>
                     <div className='text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>EXPERIENCE</h1>
@@ -262,7 +278,7 @@ function Home() {
             </section>
 
             <section id='project'>
-                <div className='pb-10'>
+                <div className=''>
                     <div className='text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>PROJECT</h1>
                     </div>
@@ -280,111 +296,6 @@ function Home() {
                             tasks={project.tasks[index]}
                         />
                     ))}
-                    {/* <div className={`justify-center items-center ${(currentValue == 1 ? 'flex' : 'hidden')}`}>
-                        <div className='w-[400px] mr-4'>
-                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
-                        </div>
-                        <div className='w-[500px]'>
-                            <div className='mb-4'>
-                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND FLUENCE</p>
-                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
-                                <div className='flex items-center'>
-                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
-                                    <div className='flex '>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/laravel.png" alt="laravel" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/mysql.png" alt="mysql" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='text-sm'>
-                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
-                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
-                                    <li>Designing database.</li>
-                                    <li>Create application flows, diagrams and integration.</li>
-                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
-                                    <li>Configure payments for applications.</li>
-                                    <li>Deploying and maintaining website on server.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`justify-center items-center ${(currentValue == 2 ? 'flex' : 'hidden')}`}>
-                        <div className='w-[400px] mr-4'>
-                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
-                        </div>
-                        <div className='w-[500px]'>
-                            <div className='mb-4'>
-                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND</p>
-                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
-                                <div className='flex items-center'>
-                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
-                                    <div className='flex '>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/laravel.png" alt="laravel" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/mysql.png" alt="mysql" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='text-sm'>
-                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
-                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
-                                    <li>Designing database.</li>
-                                    <li>Create application flows, diagrams and integration.</li>
-                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
-                                    <li>Configure payments for applications.</li>
-                                    <li>Deploying and maintaining website on server.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`justify-center items-center ${(currentValue == 3 ? 'flex' : 'hidden')}`}>
-                        <div className='w-[400px] mr-4'>
-                            <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
-                        </div>
-                        <div className='w-[500px]'>
-                            <div className='mb-4'>
-                                <p className='text-primary-base text-xl font-semibold mb-4'>FIND FLUENCE 3</p>
-                                <p className='text-tertiary-base text-md mb-4'>BACKEND ENGINEER</p>
-                                <div className='flex items-center'>
-                                    <p className='text-primary-base text-md mr-2'>STACKS</p>
-                                    <div className='flex '>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/laravel.png" alt="laravel" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/bootstrap.png" alt="bootstrap" />
-                                        </div>
-                                        <div className='w-10 h-10 p-1 mx-1 rounded-md bg-quinary-base flex items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                            <img src="/assets/icons/mysql.png" alt="mysql" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='text-sm'>
-                                <p className='text-primary-base mb-2 text-justify'>Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:</p>
-                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
-                                    <li>Designing database.</li>
-                                    <li>Create application flows, diagrams and integration.</li>
-                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
-                                    <li>Configure payments for applications.</li>
-                                    <li>Deploying and maintaining website on server.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> */}
                     <div className='flex justify-center gap-8'>
                         <div onClick={previous} className={`${(currentValue == 0) ? 'hidden' : 'flex'} justify-center items-center gap-2 mt-8 cursor-pointer hover:transform hover:scale-105 duration-300`}>
                             <img className='w-6 h-6 transform -scale-x-100' src="/assets/icons/arrow.png" alt="previous" />
