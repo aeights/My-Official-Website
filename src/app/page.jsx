@@ -1,18 +1,90 @@
 "use client"
 
+import ExperienceComponent from '@/components/ExperienceComponent';
+import ProjectComponent from '@/components/ProjectComponent';
 import SkillComponent from '@/components/SkillComponent'
 import { useState } from 'react'
 
 
 function Home() {
-    const [currentValue, setCurrentValue] = useState(1);
+    const [currentValue, setCurrentValue] = useState(0);
 
     const next = () => {
-    setCurrentValue(currentValue + 1);
+        setCurrentValue(currentValue + 1);
     };
 
     const previous = () => {
-    setCurrentValue(currentValue - 1);
+        setCurrentValue(currentValue - 1);
+    };
+
+    const experience = {
+        src: [
+            '/assets/experience/ads.png', '/assets/experience/telkom.png'
+        ],
+        alt: [
+            'PT Adma Digital Solusi', 'Telkom Access Jember'
+        ],
+        title: [
+            'PT ADMA DIGITAL SOLUSI', 'TELKOM ACCESS JEMBER'
+        ],
+        location: [
+            'SURABAYA, INDONESIA', 'JEMBER, INDONESIA'
+        ],
+        body: [
+            "ADS Digital Partner (PT Adma Digital Solusi) is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and Bandung. I'm here as a backend engineer with several duties including:",
+            "Telkom Access is a subsidiary of PT Telkom Indonesia Tbk and was founded on December 12 2012. I work here in the Access and Service Operation (ASO) Unit, with several tasks including:"
+        ],
+        tasks: [
+            [
+                "Create an influencer search platform (Find Fluence).",
+                "Designing databases, and creating APIs.",
+                "Deploying and maintaining website on server.",
+                "Application integration with APIs such as TikTok, Youtube, Instagram.",
+            ],
+            [
+                "Serving customers in the customer service department.",
+                "Responsible for handling disturbances or trouble shooting experienced by customers.",
+                "Coordinate with field technicians to address customer troubleshooting.",
+                "Network maintenance, especially for ODP in each sub-district.",
+            ]
+        ]
+    };
+
+    const project = {
+        src: [
+            "/assets/project/findfluence.png",
+        ],
+        alt: [
+            "PT Adma Digital Solusi",
+        ],
+        title: [
+            "FIND FLUENCE",
+        ],
+        role: [
+            "BACKEND ENGINEER",
+        ],
+        stackSrc: [
+            [
+                "/assets/icons/laravel.png", "/assets/icons/bootstrap.png", "/assets/icons/mysql.png"
+            ],
+        ],
+        stackAlt: [
+            [
+                "laravel", "bootstrap", "mysql"
+            ],
+        ],
+        body: [
+            "Findfluence is a platform that makes it easy for brands to find suitable influencers to promote their products. Find fluence is integrated directly with Tiktok, Youtube, and Instagram (soon), to make it easier for influencers to connect their social media. Here are some of my tasks:",
+        ],
+        tasks: [
+            [
+                "Designing database.",
+                "Create application flows, diagrams and integration.",
+                "Application integration with APIs such as TikTok, Youtube, Instagram.",
+                "Configure payments for applications.",
+                "Deploying and maintaining website on server.",
+            ],
+        ],
     };
 
     return (
@@ -101,47 +173,25 @@ function Home() {
                             <p className='mb-4 text-md text-primary-base'>LANGUAGE</p>
                             <ul className='flex justify-center'>
                                 <li>
-                                    {/* <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/python.png" alt="python" />
-                                        <p className='text-xs text-primary-base'>PYTHON</p>
-                                    </div> */}
-                                    <SkillComponent imageUrl={"/assets/icons/python.png"} imageAlt={"python"} imageTitle={"PYTHON"}></SkillComponent>
+                                    <SkillComponent src={"/assets/icons/python.png"} alt={"python"} title={"PYTHON"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/java.png" alt="java" />
-                                        <p className='text-xs text-primary-base'>JAVA</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/java.png"} alt={"java"} title={"JAVA"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/csharp.png" alt="csharp" />
-                                        <p className='text-xs text-primary-base'>C#</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/csharp.png"} alt={"csharp"} title={"C#"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/cplusplus.png" alt="cplusplus" />
-                                        <p className='text-xs text-primary-base'>C++</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/cplusplus.png"} alt={"cplusplus"} title={"C++"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/dart.png" alt="dart" />
-                                        <p className='text-xs text-primary-base'>DART</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/dart.png"} alt={"dart"} title={"DART"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/php.png" alt="php" />
-                                        <p className='text-xs text-primary-base'>PHP</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/php.png"} alt={"php"} title={"PHP"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/javascript.png" alt="javascript" />
-                                        <p className='text-xs text-primary-base'>JAVASCRIPT</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/javascript.png"} alt={"javascript"} title={"JAVASCRIPT"} />
                                 </li>
                             </ul>
                         </div>
@@ -149,40 +199,22 @@ function Home() {
                             <p className='mb-4 text-md text-primary-base'>FRAMEWORK</p>
                             <ul className='flex justify-center'>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/flask.png" alt="flask" />
-                                        <p className='text-xs text-primary-base'>FLASK</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/flask.png"} alt={"flask"} title={"FLASK"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/laravel.png" alt="laravel" />
-                                        <p className='text-xs text-primary-base'>LARAVEL</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/laravel.png"} alt={"laravel"} title={"LARAVEL"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/nextjs.png" alt="nextjs" />
-                                        <p className='text-xs text-primary-base'>NEXT JS</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/nextjs.png"} alt={"nextjs"} title={"NEXT JS"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/flutter.png" alt="flutter" />
-                                        <p className='text-xs text-primary-base'>FLUTTER</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/flutter.png"} alt={"flutter"} title={"FLUTTER"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/bootstrap.png" alt="bootstrap" />
-                                        <p className='text-xs text-primary-base'>BOOTSTRAP</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/bootstrap.png"} alt={"bootstrap"} title={"BOOTSTRAP"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/tailwind.png" alt="tailwind" />
-                                        <p className='text-xs text-primary-base'>TAILWIND</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/tailwind.png"} alt={"tailwind"} title={"TAILWIND"} />
                                 </li>
                             </ul>
                         </div>
@@ -190,34 +222,19 @@ function Home() {
                             <p className='mb-4 text-md text-primary-base'>TOOLS</p>
                             <ul className='flex justify-center'>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/vscode.png" alt="vscode" />
-                                        <p className='text-xs text-primary-base'>VSCODE</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/vscode.png"} alt={"vscode"} title={"VSCODE"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/visual-studio.png" alt="visual-studio" />
-                                        <p className='text-xs text-primary-base'>VISUAL STUDIO</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/visual-studio.png"} alt={"visual-studio"} title={"VISUAL STUDIO"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/git.png" alt="git" />
-                                        <p className='text-xs text-primary-base'>GIT</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/git.png"} alt={"git"} title={"GIT"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/postman.png" alt="postman" />
-                                        <p className='text-xs text-primary-base'>POSTMAN</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/postman.png"} alt={"postman"} title={"POSTMAN"} />
                                 </li>
                                 <li>
-                                    <div className='w-24 h-24 rounded-md bg-quinary-base mx-6 flex flex-col justify-evenly items-center hover:shadow-[3px_3px_10px_rgba(0,0,0,0.5)] duration-300'>
-                                        <img className='h-10' src="/assets/icons/putty.png" alt="putty" />
-                                        <p className='text-xs text-primary-base'>PUTTY</p>
-                                    </div>
+                                    <SkillComponent src={"/assets/icons/putty.png"} alt={"putty"} title={"PUTTY"} />
                                 </li>
                             </ul>
                         </div>
@@ -230,46 +247,17 @@ function Home() {
                     <div className='text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>EXPERIENCE</h1>
                     </div>
-                    <div className='flex justify-center items-center mb-16'>
-                        <div className='w-[400px] mr-4'>
-                            <img className='w-full' src="/assets/experience/ads.png" alt="PT Adma Digital Solusi" />
-                        </div>
-                        <div className='w-[500px]'>
-                            <div className='mb-4'>
-                                <p className='text-primary-base text-xl font-semibold mb-4'>PT ADMA DIGITAL SOLUSI</p>
-                                <p className='text-tertiary-base text-lg'>SURABAYA, INDONESIA</p>
-                            </div>
-                            <div className='text-sm'>
-                                <p className='text-primary-base mb-2 text-justify'>ADS Digital Partner (PT Adma Digital Solusi) is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and Bandung. I'm here as a backend engineer with several duties including:</p>
-                                <ul className='text-primary-base ml-5 text-justify' style={{ listStyleType: 'disc' }}>
-                                    <li>Create an influencer search platform (Find Fluence).</li>
-                                    <li>Designing databases, and creating APIs.</li>
-                                    <li>Deploying and maintaining website on server.</li>
-                                    <li>Application integration with APIs such as TikTok, Youtube, Instagram.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex justify-center items-center'>
-                        <div className='w-[400px] mr-4'>
-                            <img className='w-full' src="/assets/experience/telkom.png" alt="Telkom Access Jember" />
-                        </div>
-                        <div className='w-[500px]'>
-                            <div className='mb-4'>
-                                <p className='text-primary-base text-xl font-semibold mb-4'>TELKOM ACCESS JEMBER</p>
-                                <p className='text-tertiary-base text-lg'>JEMBER, INDONESIA</p>
-                            </div>
-                            <div className='text-sm'>
-                                <p className='text-primary-base mb-2 text-justify'>Telkom Access is a subsidiary of PT Telkom Indonesia Tbk and was founded on December 12 2012. I work here in the Access and Service Operation (ASO) Unit, with several tasks including:</p>
-                                <ul className='text-primary-base text-justify' style={{ listStyleType: 'disc', paddingLeft: '1.25rem' }}>
-                                    <li>Serving customers in the customer service department.</li>
-                                    <li>Responsible for handling disturbances or trouble shooting experienced by customers.</li>
-                                    <li>Coordinate with field technicians to address customer troubleshooting.</li>
-                                    <li>Network maintenance, especially for ODP in each sub-district.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    {experience.src.map((src, index) => (
+                        <ExperienceComponent
+                            key={index}
+                            src={src}
+                            alt={experience.alt[index]}
+                            title={experience.title[index]}
+                            location={experience.location[index]}
+                            body={experience.body[index]}
+                            tasks={experience.tasks[index]}
+                        />
+                    ))}
                 </div>
             </section>
 
@@ -278,7 +266,21 @@ function Home() {
                     <div className='text-center mb-8'>
                         <h1 className='text-5xl font-bold text-tertiary-base mb-12'>PROJECT</h1>
                     </div>
-                    <div className={`justify-center items-center ${(currentValue == 1 ? 'flex':'hidden')}`}>
+                    {project.src.map((src, index) => (
+                        <ProjectComponent
+                            key={index}
+                            state={(currentValue == index) ? 'flex' : 'hidden'}
+                            src={src}
+                            alt={project.alt[index]}
+                            title={project.title[index]}
+                            role={project.role[index]}
+                            stackSrc={project.stackSrc[index]}
+                            stackAlt={project.stackAlt[index]}
+                            body={project.body[index]}
+                            tasks={project.tasks[index]}
+                        />
+                    ))}
+                    {/* <div className={`justify-center items-center ${(currentValue == 1 ? 'flex' : 'hidden')}`}>
                         <div className='w-[400px] mr-4'>
                             <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
                         </div>
@@ -313,7 +315,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={`justify-center items-center ${(currentValue == 2 ? 'flex':'hidden')}`}>
+                    <div className={`justify-center items-center ${(currentValue == 2 ? 'flex' : 'hidden')}`}>
                         <div className='w-[400px] mr-4'>
                             <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
                         </div>
@@ -348,7 +350,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={`justify-center items-center ${(currentValue == 3 ? 'flex':'hidden')}`}>
+                    <div className={`justify-center items-center ${(currentValue == 3 ? 'flex' : 'hidden')}`}>
                         <div className='w-[400px] mr-4'>
                             <img className='w-full' src="/assets/project/findfluence.png" alt="PT Adma Digital Solusi" />
                         </div>
@@ -382,9 +384,9 @@ function Home() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className='flex justify-center gap-8'>
-                        <div onClick={previous} className={`${(currentValue == 1) ? 'hidden' : 'flex'} justify-center items-center gap-2 mt-8 cursor-pointer hover:transform hover:scale-105 duration-300`}>
+                        <div onClick={previous} className={`${(currentValue == 0) ? 'hidden' : 'flex'} justify-center items-center gap-2 mt-8 cursor-pointer hover:transform hover:scale-105 duration-300`}>
                             <img className='w-6 h-6 transform -scale-x-100' src="/assets/icons/arrow.png" alt="previous" />
                             <button className='text-primary-base text-2xl' type='button'>PREVIOUS</button>
                         </div>
