@@ -161,7 +161,7 @@ function Home() {
                 <div className='w-full h-screen flex flex-row justify-center items-center'>
                     <div className='relative flex flex-col w-[300px] h-[350px] rounded-md mx-10'>
                         <div className='w-[250px] h-[330px] absolute left-4 bottom-2 rounded-md shadow-[3px_5px_10px_rgba(0,0,0,0.5)]'>
-                            <img className='object-cover w-full h-full rounded-md' src="/assets/photo.jpg" />
+                            <img className='object-cover w-full h-full rounded-md' src="/assets/photo.jpg" alt='afif' />
                         </div>
                         <div className='bg-tertiary-base rounded-md p-2 absolute left-0 bottom-0 shadow-[3px_5px_10px_rgba(0,0,0,0.5)]'>
                             <span className='text-secondary-base font-semibold'>FULLSTACK DEVELOPER</span>

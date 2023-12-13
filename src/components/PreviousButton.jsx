@@ -1,7 +1,6 @@
 import React from 'react'
 
-function PreviousButton(props) {
-    const {title, icon} = props;
+function PreviousButton({icon, title}) {
     return (
         <div>
             <img src={icon} alt="previous" />

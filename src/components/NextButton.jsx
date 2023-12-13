@@ -1,7 +1,6 @@
 import React from 'react'
 
-function NextButton(props) {
-    const {title, icon} = props;
+function NextButton({icon, title}) {
     return (
         <div>
             <img src={icon} alt="next" />
