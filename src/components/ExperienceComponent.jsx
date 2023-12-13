@@ -2,8 +2,8 @@ import React from 'react'
 
 function ExperienceComponent({ src, alt, title, location, body, tasks }) {
     return (
-        <div className='flex justify-center items-center mb-16'>
-            <div className='w-[400px] mr-4'>
+        <div className='flex justify-center items-center mb-16 gap-4'>
+            <div className='w-[400px]'>
                 <img className='w-full' src={src} alt={alt} />
             </div>
             <div className='w-[500px]'>

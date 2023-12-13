@@ -3,8 +3,9 @@
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import { useState, useEffect } from 'react'
+import Link from 'next/link';
 
-const poppins = Poppins({ weight: '400', style: 'normal',subsets: ['latin'] });
+const poppins = Poppins({ weight: '400', style: 'normal', subsets: ['latin'] });
 
 // export const metadata = {
 //   title: "Muhammad Afif Ma'ruf",
@@ -12,60 +13,132 @@ const poppins = Poppins({ weight: '400', style: 'normal',subsets: ['latin'] });
 // }
 
 export default function RootLayout({ children }) {
-  const [color, setColor] = useState(false);
+	const [color, setColor] = useState(false);
 
-  useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 50) {
-        setColor(true);
-      } else {
-        setColor(false);
-      }
-    }
-  
-    window.addEventListener('scroll', changeColor);
-    
-    return () => {
-      window.addEventListener('scroll', changeColor);
-    };
-  })
+	useEffect(() => {
+		const changeColor = () => {
+			if (window.scrollY >= 50) {
+				setColor(true);
+			} else {
+				setColor(false);
+			}
+		}
 
-  return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <nav className={color? 'shadow-[3px_5px_10px_rgba(0,0,0,0.5)] duration-300 fixed w-full z-20 top-0 start-0 bg-secondary-base' : 'fixed w-full z-20 top-0 start-0 bg-secondary-base'}>
-          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <span className="self-center text-lg font-semibold whitespace-nowrap text-primary-base">MUHAMMAD <span className='text-tertiary-base'>AFIF MA</span>'RUF</span>
-            </a>
-            <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-              <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
-                <li>
-                  <a href="#" className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">HOME</a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">SKILL</a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">EXPERIENCE</a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">PROJECT</a>
-                </li>
-                <li>
-                  <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse rounded-md bg-tertiary-base hover:bg-tertiary-hover duration-300">
-                    <a href="#" className="block p-2 rounded text-secondary-base font-bold text-md">CONTACT</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+		window.addEventListener('scroll', changeColor);
 
-        <main className='bg-secondary-base'>
-          {children}
-        </main>
-      </body>
-    </html>
-  )
+		return () => {
+			window.addEventListener('scroll', changeColor);
+		};
+	})
+
+	return (
+		<html lang="en">
+			<body className={poppins.className}>
+				<nav className={color ? 'shadow-[3px_5px_10px_rgba(0,0,0,0.5)] duration-300 fixed w-full z-20 top-0 start-0 bg-secondary-base' : 'fixed w-full z-20 top-0 start-0 bg-secondary-base'}>
+					<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+						<Link href={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">
+							<span className="self-center text-lg font-semibold whitespace-nowrap text-primary-base">MUHAMMAD <span className='text-tertiary-base'>AFIF MA</span>'RUF</span>
+						</Link>
+						<div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+							<ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+								<li>
+									<Link href={"/"} className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">HOME</Link>
+								</li>
+								<li>
+									<Link href={"#skill"} className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">SKILL</Link>
+								</li>
+								<li>
+									<Link href={"#experience"} className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">EXPERIENCE</Link>
+								</li>
+								<li>
+									<Link href={"#project"} className="block p-2 rounded text-primary-base hover:text-tertiary-base text-sm duration-300">PROJECT</Link>
+								</li>
+								<li>
+									<div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse rounded-md bg-tertiary-base hover:bg-tertiary-hover duration-300">
+										<Link href={"#contact"} className="block p-2 rounded text-secondary-base font-bold text-md">CONTACT</Link>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+
+				<main className='bg-secondary-base pb-12'>
+					{children}
+				</main>
+
+				<footer>
+					<div className='bg-quinary-base'>
+						<div className='flex justify-center items-center gap-44 p-8'>
+							<div className='flex flex-col'>
+								<Link href={"/"} className="flex items-center mb-2">
+									<span className="self-center text-2xl whitespace-nowrap text-primary-base">MUHAMMAD <span className='text-tertiary-base'>AFIF MA</span>'RUF</span>
+								</Link>
+								<p className='text-primary-base text-sm'>This website was created with Next JS and Tailwind CSS</p>
+							</div>
+							<div className='flex gap-36'>
+								<div>
+									<p className='text-tertiary-base text-xl mb-4'>CONNECT WITH ME</p>
+									<ul className='flex flex-col gap-2'>
+										<li>
+											<a className='flex gap-2' href="https://www.instagram.com/muhammad_afif_ma.ruf/" target='_blank'>
+												<span><i class="fa-brands fa-instagram" style={{ color:"#272829;" }}></i></span>
+												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>@muhammad_afif_ma.ruf</p>
+											</a>
+										</li>
+										<li>
+											<a className='flex gap-2' href="https://www.facebook.com/AeightS088" target='_blank'>
+												<span><i class="fa-brands fa-facebook" style={{ color:"#272829;" }}></i></span>
+												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Muhammad Afif Ma'ruf</p>
+											</a>
+										</li>
+										<li>
+											<a className='flex gap-2' href="https://www.linkedin.com/in/muhammad-afif-ma-ruf/" target='_blank'>
+												<span><i class="fa-brands fa-linkedin" style={{ color:"#272829;" }}></i></span>
+												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Muhammad Afif Ma'ruf</p>
+											</a>
+										</li>
+										<li>
+											<a className='flex gap-2' href='mailto:m.afif.ma.ruf8@gmail.com' target='_blank'>
+												<span><i class="fa-regular fa-envelope" style={{ color:"#272829;" }}></i></span>
+												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>m.afifma.ruf8@gmail.com</p>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div>
+									<p className='text-tertiary-base text-xl mb-4'>MENU</p>
+									<ul className='flex flex-col gap-2'>
+										<li>
+											<Link href={"/"}><p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Home</p></Link>
+										</li>
+										<li>
+											<Link href={"#skill"}><p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Skill</p></Link>
+										</li>
+										<li>
+											<Link href={"#experience"}><p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Experience</p></Link>
+										</li>
+										<li>
+											<Link href={"#project"}><p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Project</p></Link>
+										</li>
+										<li>
+											<Link href={"#contact"}><p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Contact</p></Link>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<hr></hr>
+						<div className='flex justify-center items-center p-4 text-primary-base text-sm'>
+							<p className='mr-1'>Copyright</p>
+							<span className='mr-2'><i class="fa-regular fa-copyright" style={{ color:"#272829;" }}></i></span>
+							<p>2023 Muhammad Afif Ma'ruf. All Rights Reserved.</p>
+						</div>
+					</div>
+				</footer>
+
+				<script src="https://kit.fontawesome.com/c559a37e6f.js" crossorigin="anonymous"></script>
+			</body>
+		</html>
+	)
 }
