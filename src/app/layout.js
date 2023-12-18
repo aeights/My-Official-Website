@@ -14,6 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<head>
+				<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+			</head>
 			<body className={poppins.className}>
 				<NavbarComponent />
 
@@ -36,25 +39,25 @@ export default function RootLayout({ children }) {
 									<ul className='flex flex-col gap-2'>
 										<li>
 											<a className='flex gap-2' href="https://www.instagram.com/muhammad_afif_ma.ruf/" target='_blank'>
-												<span><i class="fa-brands fa-instagram" style={{ color:"#272829;" }}></i></span>
+												<span><i className="fa-brands fa-instagram" style={{ color:"#272829" }}></i></span>
 												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>@muhammad_afif_ma.ruf</p>
 											</a>
 										</li>
 										<li>
 											<a className='flex gap-2' href="https://www.facebook.com/AeightS088" target='_blank'>
-												<span><i class="fa-brands fa-facebook" style={{ color:"#272829;" }}></i></span>
+												<span><i className="fa-brands fa-facebook" style={{ color:"#272829" }}></i></span>
 												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Muhammad Afif Ma'ruf</p>
 											</a>
 										</li>
 										<li>
 											<a className='flex gap-2' href="https://www.linkedin.com/in/muhammad-afif-ma-ruf/" target='_blank'>
-												<span><i class="fa-brands fa-linkedin" style={{ color:"#272829;" }}></i></span>
+												<span><i className="fa-brands fa-linkedin" style={{ color:"#272829" }}></i></span>
 												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>Muhammad Afif Ma'ruf</p>
 											</a>
 										</li>
 										<li>
 											<a className='flex gap-2' href='mailto:m.afif.ma.ruf8@gmail.com' target='_blank'>
-												<span><i class="fa-regular fa-envelope" style={{ color:"#272829;" }}></i></span>
+												<span><i className="fa-regular fa-envelope" style={{ color:"#272829" }}></i></span>
 												<p className='text-primary-base text-sm hover:text-tertiary-base duration-300'>m.afifma.ruf8@gmail.com</p>
 											</a>
 										</li>
@@ -85,13 +88,17 @@ export default function RootLayout({ children }) {
 						<hr></hr>
 						<div className='flex justify-center items-center p-4 text-primary-base text-sm'>
 							<p className='mr-1'>Copyright</p>
-							<span className='mr-2'><i class="fa-regular fa-copyright" style={{ color:"#272829;" }}></i></span>
+							<span className='mr-2'><i className="fa-regular fa-copyright" style={{ color:"#272829" }}></i></span>
 							<p>2023 Muhammad Afif Ma'ruf. All Rights Reserved.</p>
 						</div>
 					</div>
 				</footer>
 
 				<Script src="https://kit.fontawesome.com/c559a37e6f.js" crossorigin="anonymous"></Script>
+				<Script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></Script>
+				<script>
+					AOS.init();
+				</script>
 			</body>
 		</html>
 	)
